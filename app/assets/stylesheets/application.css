@@ -1,7 +1,20 @@
 @import url('https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.css');
 
+body {
+  background-color: rgb(255, 252, 240);
+  padding-top: 50px;
+}
+
 .navbar {
-  background-color: rgb(235, 235, 235);
+  background-color: rgb(32, 32, 32);
+  color: white;
+  font-size: larger;
+}
+
+.cards-banner-cover {
+  position: relative;
+  margin-top: -100px;
+  z-index: 10;
 }
 
 .img-fixed {
@@ -14,6 +27,16 @@
   height: 300px;
   object-fit: cover;
   width: 100%;
+}
+
+.popup {
+  max-width: 250px;
+  max-height: 300px;
+  overflow: auto;
+  padding: 10px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .popup-image {
@@ -48,13 +71,4 @@ h1 {
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-.mapboxgl-popup {
-  max-width: 200px;
-}
-
-.mapboxgl-popup-content {
-  text-align: center;
-  font-family: "Open Sans", sans-serif;
-  padding: 15px;
 }

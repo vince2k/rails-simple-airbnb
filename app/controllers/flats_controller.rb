@@ -2,7 +2,9 @@ class FlatsController < ApplicationController
   before_action :set_flat, only: [:show, :edit, :update, :destroy]
 
   def index
-    @flats = Flat.all
+    search_query = params[:search].presence
+    @flats = Flat.search(search_query)
+
     @markers = @flats.geocoded.map do |flat|
       {
         lat: flat.latitude,
