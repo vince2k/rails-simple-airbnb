@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_02_11_125748) do
+ActiveRecord::Schema[7.1].define(version: 2025_02_12_102718) do
   create_table "flats", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -20,6 +20,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_11_125748) do
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
   end
 
 end

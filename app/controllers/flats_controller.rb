@@ -3,10 +3,21 @@ class FlatsController < ApplicationController
 
   def index
     @flats = Flat.all
+    @markers = @flats.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude,
+        info_window_html: render_to_string(partial: "popup", locals: {flat: flat})
+      }
+    end
   end
 
   def show
-
+    @markers = [{
+      lat: @flat.latitude,
+      lng: @flat.longitude,
+      info_window_html: render_to_string(partial: "popup", locals: {flat: @flat})
+    }]
   end
 
   def new
